@@ -1,0 +1,10 @@
+Link: https://youtu.be/d-HLxPJW1BQ?t=1103
+
+Git:
+    git status: kiểm trả trạng thái của file
+    git remote -v: Kiểm tra link url remote trên github
+    git remote add origin git@github.com:trongnhan19081994/trello-web.git : lấy link url remote trên github cho local
+
+    git add .
+    git commit -m"nội dung muốn ghi"
+    git push origin master
