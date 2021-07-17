@@ -8,3 +8,10 @@ Git:
     git add .
     git commit -m"nội dung muốn ghi"
     git push origin master
+
+    git checkout -b update-readme: checkout 1 branch mới tên là "update-readme"
+
+
+
+Videos 1:
+So sánh npm với npx: https://viblo.asia/p/su-khac-nhau-giua-npm-va-npx-bWrZnxM95xw
