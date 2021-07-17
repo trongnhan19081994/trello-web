@@ -14,4 +14,7 @@ Git:
 
 
 Videos 1:
-So sánh npm với npx: https://viblo.asia/p/su-khac-nhau-giua-npm-va-npx-bWrZnxM95xw
+    So sánh npm với npx: https://viblo.asia/p/su-khac-nhau-giua-npm-va-npx-bWrZnxM95xw
+
+Videos 2:
+    markdown syntax github
