@@ -20,7 +20,11 @@ Git:
         => :wq
         git push origin update-readme -f Từ lần thứ 2 push code ở thuộc tính có rồi thì thêm -f
 
+    Checkout qua nhánh khác (ví dụ là nhánh tên là master) thì dùng lệnh: git checkout master 
+    => Sau đó chạy: git pull origin master để cập nhật code mới nhất về
 
+    Kiểm tra đang ở branch nào: git branch
+    Xoá branch: git branch -D update-readme (update-readme là tên branch)
 
 Videos 1:
     So sánh npm với npx: https://viblo.asia/p/su-khac-nhau-giua-npm-va-npx-bWrZnxM95xw
