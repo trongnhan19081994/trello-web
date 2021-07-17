@@ -10,6 +10,15 @@ Git:
     git push origin master
 
     git checkout -b update-readme: checkout 1 branch mới tên là "update-readme"
+    git add .
+    git commit -m"nội dung muốn ghi"
+    git push origin update-readme
+
+    Trường hợp muốn edit file xong commit lên tiếp nhưng vẫn giữ nội dung commit cũ:
+        git add .
+        git commit --amend 
+        => :wq
+        git push origin update-readme -f Từ lần thứ 2 push code ở thuộc tính có rồi thì thêm -f
 
 
 
