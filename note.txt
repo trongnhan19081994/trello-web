@@ -30,4 +30,5 @@ Videos 1:
     So sánh npm với npx: https://viblo.asia/p/su-khac-nhau-giua-npm-va-npx-bWrZnxM95xw
 
 Videos 2:
-    markdown syntax github
+    markdown syntax github: Để viết document trên github
+    install: node sass để viết css bằng sass https://www.npmjs.com/package/node-sass
