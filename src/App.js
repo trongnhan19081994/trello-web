@@ -1,85 +1,19 @@
+import React from 'react';
 import './App.scss';
+import AppBar from 'components/AppBar/AppBar';
+import BoardBar from 'components/BoardBar/BoardBar';
+import BoardContent from 'components/BoardContent/BoardContent';
 
 function App() {
   return (
     <div className="trello-master">
-      <nav className="navbar app"> App Bar </nav>
-      <nav className="navbar board"> Board Bar </nav>
-      <nav className="board-columns">
 
-        <div className="column">
-          <header> Brainstorm </header>
-          <ul>
-            <li>
-              <img src="https://www.imgonline.com.ua/examples/rainbow-background-2-big.jpg" alt="image title" />
-              Title: Image title
-            </li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-          </ul>
-          <footer>Add another card</footer>
-        </div>
+      <AppBar />
 
-        <div className="column">
-          <header> Brainstorm </header>
-          <ul>
-            <li>
-              <img src="https://www.imgonline.com.ua/examples/rainbow-background-2-big.jpg" alt="image title" />
-              Title: Image title
-            </li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-          </ul>
-          <footer>Add another card</footer>
-        </div>
-        <div className="column">
-          <header> Brainstorm </header>
-          <ul>
-            <li>
-              <img src="https://www.imgonline.com.ua/examples/rainbow-background-2-big.jpg" alt="image title" />
-              Title: Image title
-            </li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-          </ul>
-          <footer>Add another card</footer>
-        </div>
-        <div className="column">
-          <header> Brainstorm </header>
-          <ul>
-            <li>
-              <img src="https://www.imgonline.com.ua/examples/rainbow-background-2-big.jpg" alt="image title" />
-              Title: Image title
-            </li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-          </ul>
-          <footer>Add another card</footer>
-        </div>
-        <div className="column">
-          <header> Brainstorm </header>
-          <ul>
-            <li>
-              <img src="https://www.imgonline.com.ua/examples/rainbow-background-2-big.jpg" alt="image title" />
-              Title: Image title
-            </li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-            <li>Add what you'd like to work on below</li>
-          </ul>
-          <footer>Add another card</footer>
-        </div>
+      <BoardBar />
 
-      </nav>
+      <BoardContent />
+
     </div>
   );
 }
