@@ -32,3 +32,18 @@ Videos 1:
 Videos 2:
     markdown syntax github: Để viết document trên github
     install: node sass để viết css bằng sass https://www.npmjs.com/package/node-sass
+
+Videos 3: 
+    Tìm hiểu jsconfig
+
+Videos 4: 
+    Order an array of objects based on another array order
+    Sort array object theo mảng array
+
+Video 5:
+    Tìm hiểu Eslint
+    Cài đặt:
+        eslint : https://www.npmjs.com/package/eslint
+        eslint-plugin-react: https://www.npmjs.com/package/eslint-plugin-react
+        eslint-plugin-react-hooks: https://www.npmjs.com/package/eslint-plugin-react-hooks
+        react-smooth-dnd: https://www.npmjs.com/package/react-smooth-dnd

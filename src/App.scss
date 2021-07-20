@@ -1,4 +1,4 @@
-@import '_setting.scss'; 
+@import '_setting.scss';
 
 body {
     margin: 0;
@@ -10,8 +10,6 @@ body {
 
 .trello-master {
     height: 100vh;
-    position: relative;
-    display: grid;
-    grid-template-rows: 40px 50px 1fr;
+    overflow: hidden;
     background-color: $board-bg-color;
 }
