@@ -6,6 +6,11 @@ $column-footer-height: 36px;
 $column-border-radius: 5px;
 $card-border-radius: 4px;
 
+$navbar-app-height: 5vh;
+$navbar-board-height: 6vh;
+$board-content-height: 88vh;
+
+$column-height: calc(#{$board-content-height} - #{$gap * 2});
 
 //Colors
 $appbar-bg-color: #0067a3;
