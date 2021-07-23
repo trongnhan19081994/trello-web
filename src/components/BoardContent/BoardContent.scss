@@ -27,7 +27,6 @@
     }
 
     .add-new-column {
-        min-width: 250px;
         width: 250px;
         height: 32px;
         line-height: 32px;
@@ -39,6 +38,7 @@
         font-size: 15px;
         background-color: hsla(0, 0%, 100%, .24);
         border-radius: $column-border-radius;
+        flex: 0 0 auto;
 
         &:hover {
             background-color: hsla(0, 0%, 100%, .34);

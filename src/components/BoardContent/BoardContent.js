@@ -28,6 +28,7 @@ function BoardContent() {
     const onColumnDrop = (dropResult) => {
         //console.log(dropResult)
         let newColumns = [...columns]
+        //console.log(newColumns)
         newColumns = applyDrag(newColumns, dropResult)
         //console.log(newColumns)
         let newBoard = { ...board }
@@ -42,13 +43,14 @@ function BoardContent() {
     const onCardDrop = (columnId, dropResult) => {
         if (dropResult.removedIndex !== null || dropResult.addedIndex !== null) {
             // console.log(columnId)
-            // console.log(dropResult)
+            //console.log(dropResult)
             let newColumns = [...columns]
-            let currentCulumn = newColumns.find(c => c.id === columnId)
-            //console.log(currentCulumn)
+            let currentColumn = newColumns.find(c => c.id === columnId)
+            //console.log(currentColumn)
 
-            currentCulumn.cards = applyDrag(currentCulumn.cards, dropResult)
-            currentCulumn.cardOrder = currentCulumn.cards.map(i => i.id)
+            currentColumn.cards = applyDrag(currentColumn.cards, dropResult)
+            currentColumn.cardOrder = currentColumn.cards.map(i => i.id)
+            //console.log(currentColumn)
 
             setColumns(newColumns)
         }
