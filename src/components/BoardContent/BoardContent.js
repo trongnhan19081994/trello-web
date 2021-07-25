@@ -20,7 +20,6 @@ function BoardContent() {
         const boardFromDB = initialData.boards.find(board => board.id === 'board-1')
         if (boardFromDB) {
             setBoard(boardFromDB)
-
             setColumns(mapOrder(boardFromDB.columns, boardFromDB.columnOrder, 'id'))
         }
     }, [])
