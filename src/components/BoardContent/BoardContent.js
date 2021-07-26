@@ -96,6 +96,26 @@ function BoardContent() {
         setNewColumTitle('')
     }
 
+    const onUpdateColumn = (newColumnToUpdate) => {
+        const columnIdToUpdate = newColumnToUpdate.id
+        let newColumns = [...columns]
+        const columnIndexToUpdate = newColumns.findIndex(c => c.id === columnIdToUpdate)
+        if (newColumnToUpdate._destroy) {
+            //remove column
+            newColumns.splice(columnIndexToUpdate, 1)
+        } else {
+            //update column
+            newColumns.splice(columnIndexToUpdate, 1, newColumnToUpdate)
+        }
+
+        let newBoard = { ...board }
+        newBoard.columnOrder = newColumns.map(c => c.id)
+        newBoard.columns = newColumns
+
+        setColumns(newColumns)
+        setBoard(newBoard)
+    }
+
     return (
         <nav className="board-content">
             <Container
@@ -112,7 +132,7 @@ function BoardContent() {
                 {
                     columns.map(column => (
                         <Draggable key={column.id}>
-                            <Column column={column} onCardDrop={onCardDrop} />
+                            <Column column={column} onCardDrop={onCardDrop} onUpdateColumn={onUpdateColumn} />
                         </Draggable>
                     ))
                 }
