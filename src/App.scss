@@ -39,6 +39,7 @@ input[type=number]:focus,
 [type=tel].form-control:focus,
 [contenteditable].form-control:focus {
     box-shadow: none;
+    border: 1px solid $input-border-color;
 }
 
 .btn:focus,
@@ -56,6 +57,22 @@ input[type=number]:focus,
 
     &:focus {
         background-color: #ffffff;
-        border: 1px solid $input-border-color;
+    }
+}
+
+.cancel-icon {
+    margin-left: $gap;
+    cursor: pointer;
+    transform: translateY(3px);
+    display: inline-block;
+
+    i {
+        font-size: 18px;
+        color: $alert-danger;
+
+        &:hover {
+            color: darken($alert-danger, 10);
+            cursor: pointer;
+        }
     }
 }
