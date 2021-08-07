@@ -11,7 +11,7 @@ import { cloneDeep } from 'lodash'
 
 function Column(props) {
     const { column, onCardDrop, onUpdateColumn } = props
-    const cards = mapOrder(column.cards, column.cardOrder, 'id')
+    const cards = mapOrder(column.cards, column.cardOrder, '_id')
     const [showConfirmModal, setShowConfirmModal] = useState(false)
     const [columnTitle, setColumnTitle] = useState('')
 
@@ -66,14 +66,14 @@ function Column(props) {
         const newCardToAdd = {
             id: Math.random().toString(36).substr(2, 5), // 5 random characters
             boardId: column.boardId,
-            columnId: column.id,
+            columnId: column._id,
             title: newCardTitle.trim(),
             cover: null
         }
 
         let newColum = cloneDeep(column)
         newColum.cards.push(newCardToAdd)
-        newColum.cardOrder.push(newCardToAdd.id)
+        newColum.cardOrder.push(newCardToAdd._id)
         onUpdateColumn(newColum)
         setNewCardTitle('')
         toggleOpenNewCardForm()
@@ -110,7 +110,7 @@ function Column(props) {
             <div className="card-list">
                 <Container
                     groupName="group-columns"
-                    onDrop={dropResult => onCardDrop(column.id, dropResult)}
+                    onDrop={dropResult => onCardDrop(column._id, dropResult)}
                     getChildPayload={index => cards[index]}
                     dragClass="card-ghost"
                     dropClass="card-ghost-drop"
@@ -123,7 +123,7 @@ function Column(props) {
                 >
                     {
                         cards.map(card => (
-                            <Draggable key={card.id}>
+                            <Draggable key={card._id}>
                                 <Card card={card} />
                             </Draggable>
                         ))
