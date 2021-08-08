@@ -8,9 +8,10 @@ import { mapOrder } from 'utilities/sort'
 import './Column.scss'
 import { saveContentAfterPressEnter, selectAllInlineText } from 'utilities/contentEditable'
 import { cloneDeep } from 'lodash'
+import { createNewCard, updateColum } from 'actions/ApiCall'
 
 function Column(props) {
-    const { column, onCardDrop, onUpdateColumn } = props
+    const { column, onCardDrop, onUpdateColumnState } = props
     const cards = mapOrder(column.cards, column.cardOrder, '_id')
     const [showConfirmModal, setShowConfirmModal] = useState(false)
     const [columnTitle, setColumnTitle] = useState('')
@@ -45,17 +46,28 @@ function Column(props) {
                 ...column,
                 _destroy: true
             }
-            onUpdateColumn(newColum)
+            //Call Api update column
+            updateColum(newColum._id, newColum).then(updatedColum => {
+                onUpdateColumnState(updatedColum)
+            })
         }
         toogleShowConfirmModal()
     }
 
+    //Update column title
     const handleColumnTitleBlur = () => {
-        const newColum = {
-            ...column,
-            title: columnTitle
+        if (columnTitle !== column.title) {
+            const newColum = {
+                ...column,
+                title: columnTitle
+            }
+
+            //Call Api update column
+            updateColum(newColum._id, newColum).then(updatedColum => {
+                updatedColum.cards = newColum.cards
+                onUpdateColumnState(updatedColum)
+            })
         }
-        onUpdateColumn(newColum)
     }
 
     const addNewCard = () => {
@@ -63,20 +75,24 @@ function Column(props) {
             newCardTextareRef.current.focus()
             return
         }
+
         const newCardToAdd = {
-            id: Math.random().toString(36).substr(2, 5), // 5 random characters
             boardId: column.boardId,
             columnId: column._id,
-            title: newCardTitle.trim(),
-            cover: null
+            title: newCardTitle.trim()
         }
 
-        let newColum = cloneDeep(column)
-        newColum.cards.push(newCardToAdd)
-        newColum.cardOrder.push(newCardToAdd._id)
-        onUpdateColumn(newColum)
-        setNewCardTitle('')
-        toggleOpenNewCardForm()
+        //Call Api
+        createNewCard(newCardToAdd).then(card => {
+            let newColum = cloneDeep(column)
+            newColum.cards.push(card)
+            newColum.cardOrder.push(card._id)
+
+            onUpdateColumnState(newColum)
+            setNewCardTitle('')
+            toggleOpenNewCardForm()
+        })
+
     }
 
     return (
