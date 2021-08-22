@@ -8,7 +8,7 @@ import { mapOrder } from 'utilities/sort'
 import './Column.scss'
 import { saveContentAfterPressEnter, selectAllInlineText } from 'utilities/contentEditable'
 import { cloneDeep } from 'lodash'
-import { createNewCard, updateColum } from 'actions/ApiCall'
+import { createNewCard, updateColumn } from 'actions/ApiCall'
 
 function Column(props) {
     const { column, onCardDrop, onUpdateColumnState } = props
@@ -47,7 +47,7 @@ function Column(props) {
                 _destroy: true
             }
             //Call Api update column
-            updateColum(newColum._id, newColum).then(updatedColum => {
+            updateColumn(newColum._id, newColum).then(updatedColum => {
                 onUpdateColumnState(updatedColum)
             })
         }
@@ -63,7 +63,7 @@ function Column(props) {
             }
 
             //Call Api update column
-            updateColum(newColum._id, newColum).then(updatedColum => {
+            updateColumn(newColum._id, newColum).then(updatedColum => {
                 updatedColum.cards = newColum.cards
                 onUpdateColumnState(updatedColum)
             })
